@@ -3,9 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false, 
-  googleApiKey: 'AIzaSyCRr7xgRYGEpeEydKeMsqLFlLJfpM7Limo', 
-  raidApiKey: '13795a561cmsh3b3e91a06e706e5p13721fjsn6730a307612a'
+  production: false,
+  googleApiKey: 'AIzaSyCRr7xgRYGEpeEydKeMsqLFlLJfpM7Limo',
+  raidApiKey: '13795a561cmsh3b3e91a06e706e5p13721fjsn6730a307612a',
+  GAPI_CLIENT_ID: '372017526732-3brig8m3gd2e6660pvfmkgdsh4d1ok41.apps.googleusercontent.com'
 };
 
 /*
