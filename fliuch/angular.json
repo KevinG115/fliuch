@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "fliuch"
+  "defaultProject": "fliuch",
+  "cli": {
+    "analytics": "2014ed93-a9de-4b78-9961-2bd3000c9324"
+  }
 }
