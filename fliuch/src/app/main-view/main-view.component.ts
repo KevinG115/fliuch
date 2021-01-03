@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {LocationService} from '../services/location.service';
 import {IpAddressService} from '../services/ip-address.service';
-import {PhotoService} from '../services/photo.service';
 
 @Component({
   selector: 'app-main-view',
@@ -11,15 +10,35 @@ import {PhotoService} from '../services/photo.service';
 export class MainViewComponent implements OnInit {
 
   public locationData: any;
-  public backgroundPhoto: any;
+  public timeOfDay = '';
   today: number = Date.now();
 
+  public isNight = false;
+  public isDay = false;
+
   constructor(private locationService: LocationService,
-              private ipAddressService: IpAddressService,
-              private photoService: PhotoService) {
-    // getting time
+              private ipAddressService: IpAddressService) {
     setInterval(() => {
-      this.today = Date.now();
+
+      // calculate time of day for background styling
+      // TODO: use a sunrise and sunset calculator based on location
+      const date = new Date();
+      this.today = date.getTime();
+
+      if (date.getHours() <= 16 && date.getHours() >= 12) {
+        this.timeOfDay = 'day';
+        this.isDay = true;
+      }
+      if (date.getHours() <= 11 && date.getHours() >= 7) {
+        this.timeOfDay = 'morning';
+      }
+      if (date.getHours() <= 19 && date.getHours() >= 17) {
+        this.timeOfDay = 'evening';
+      }
+      if (date.getHours() <= 6 || date.getHours() > 19) {
+        this.timeOfDay = 'night';
+        this.isNight = true;
+      }
     }, 1);
   }
 
@@ -29,9 +48,6 @@ export class MainViewComponent implements OnInit {
         this.locationService.getLocation(ipAddressData.ip)
           .subscribe((data: any) => {
             this.locationData = data.area.name;
-            this.photoService.getPhoto(data.area.name).subscribe((photoData: any) => {
-                this.backgroundPhoto = photoData.value[0].contentUrl;
-            });
           });
       });
 
