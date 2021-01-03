@@ -1,7 +1,9 @@
 <div class="sky-gradient {{timeOfDay}} main-view-container">
-  <div [ngClass]="{'moon':isNight, 'sun':isDay}"></div>
+  <div [ngClass]="{
+  'moon':timeOfDay === 'night',
+  'sun':timeOfDay === 'day'}"></div>
   <div class="time-location-container background-container"
-       [ngClass]="{'stars': isNight}">
+       [ngClass]="{'stars': timeOfDay === 'night'}">
     <div class="time-location">
       <div class="tempature-text">1°</div>
       <h1>{{today | date:'h:mm:ss a'}}</h1>

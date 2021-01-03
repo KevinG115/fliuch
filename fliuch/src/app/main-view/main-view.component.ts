@@ -13,9 +13,6 @@ export class MainViewComponent implements OnInit {
   public timeOfDay = '';
   today: number = Date.now();
 
-  public isNight = false;
-  public isDay = false;
-
   constructor(private locationService: LocationService,
               private ipAddressService: IpAddressService) {
     setInterval(() => {
@@ -26,8 +23,7 @@ export class MainViewComponent implements OnInit {
       this.today = date.getTime();
 
       if (date.getHours() <= 16 && date.getHours() >= 12) {
-        this.timeOfDay = 'day';
-        this.isDay = true;
+        this.timeOfDay = 'night';
       }
       if (date.getHours() <= 11 && date.getHours() >= 7) {
         this.timeOfDay = 'morning';
@@ -37,7 +33,6 @@ export class MainViewComponent implements OnInit {
       }
       if (date.getHours() <= 6 || date.getHours() > 19) {
         this.timeOfDay = 'night';
-        this.isNight = true;
       }
     }, 1);
   }
