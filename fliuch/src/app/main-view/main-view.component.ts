@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {LocationService} from '../services/location.service';
 import {IpAddressService} from '../services/ip-address.service';
+import {WeatherService} from '../services/weather.service';
 
 @Component({
   selector: 'app-main-view',
@@ -14,7 +15,8 @@ export class MainViewComponent implements OnInit {
   today: number = Date.now();
 
   constructor(private locationService: LocationService,
-              private ipAddressService: IpAddressService) {
+              private ipAddressService: IpAddressService,
+              private weatherService: WeatherService) {
     setInterval(() => {
 
       // calculate time of day for background styling
@@ -43,6 +45,9 @@ export class MainViewComponent implements OnInit {
         this.locationService.getLocation(ipAddressData.ip)
           .subscribe((data: any) => {
             this.locationData = data.area.name;
+            this.weatherService.getWeather(data.area.name).subscribe((weatherData: any) => {
+
+            });
           });
       });
 
