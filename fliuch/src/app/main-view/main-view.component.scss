@@ -1,8 +1,16 @@
 .main-view-container {
   text-align: center;
+  position: relative;
 
   h1 {
     color: white;
+  }
+
+  .silhouette {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
   }
 
   .time-location-container {
@@ -11,25 +19,13 @@
     margin: -75px 0 0 -90px;
 
     .time-location {
-
-      .temperature-text {
+      .location-text {
         font-size: 62px;
         color: white;
       }
 
-      .weather-details-container {
-        padding-top: 25%;
-
-        .weather-details {
-          min-width: 300px;
-          max-width: 500px;
-          margin: auto;
-          padding: 25px;
-          border: white 2px solid;
-          border-radius: 4px;
-          opacity: 0.5;
-          background: rgba(gray, 0.7);
-        }
+      .temperature-text{
+        font-size: 62px;
       }
     }
   }
@@ -58,6 +54,10 @@
     background-color: transparent;
     border-radius: 50%;
     box-shadow: 25px 10px 0px 0px #fff;
+
+    @media only screen and (max-width: 500px) {
+      top: 32%;
+    }
   }
 
   .sun {

@@ -10,9 +10,12 @@ import {WeatherService} from '../services/weather.service';
 })
 export class MainViewComponent implements OnInit {
 
-  public locationData: any;
   public timeOfDay = '';
-  today: number = Date.now();
+  public temperature = '';
+  public today: number = Date.now();
+  public locationData: any;
+  public weatherData: any;
+
 
   constructor(private locationService: LocationService,
               private ipAddressService: IpAddressService,
@@ -46,7 +49,7 @@ export class MainViewComponent implements OnInit {
           .subscribe((data: any) => {
             this.locationData = data.area.name;
             this.weatherService.getWeather(data.area.name).subscribe((weatherData: any) => {
-
+              this.weatherData = weatherData;
             });
           });
       });

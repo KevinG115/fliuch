@@ -11,7 +11,8 @@ export class WeatherService {
   }
 
   getWeather(location: string) {
-    return this.http.get('https://community-open-weather-map.p.rapidapi.com/weather?q=Kerry', {
+    return this.http.get('https://community-open-weather-map.p.rapidapi.com/weather?units=metric&q='
+      + location, {
       headers: {'x-rapidapi-key': environment.raidApiKey}
     });
   }

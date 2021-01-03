@@ -1,0 +1,22 @@
+<div class="weather-details-container">
+  <div class="weather-details">
+    <div class="weatherIcon">
+      <div class="mostlycloudy">
+        <div class="inner"></div>
+      </div>
+    </div>
+    <div class="weather-summary">
+      <h3>
+        {{weatherData.weather[0].description}}
+      </h3>
+    </div>
+    <div class="weather-details-values">
+      <div class="label">
+        Wind:
+      </div>
+      <div class="value">
+        {{ weatherData.wind.speed}} km/hr
+      </div>
+    </div>
+  </div>
+</div>
