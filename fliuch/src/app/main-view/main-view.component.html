@@ -5,11 +5,17 @@
   <div class="time-location-container background-container"
        [ngClass]="{'stars': timeOfDay === 'night'}">
     <div class="time-location">
-      <div class="tempature-text">1°</div>
+      <div class="temperature-text">1°</div>
       <h1>{{today | date:'h:mm:ss a'}}</h1>
       <h1>{{locationData}} </h1>
+      <div class="weather-details-container">
+        <div class="weather-details">
+          test
+        </div>
+      </div>
     </div>
   </div>
+
 </div>
 
 

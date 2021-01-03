@@ -23,7 +23,7 @@ export class MainViewComponent implements OnInit {
       this.today = date.getTime();
 
       if (date.getHours() <= 16 && date.getHours() >= 12) {
-        this.timeOfDay = 'night';
+        this.timeOfDay = 'day';
       }
       if (date.getHours() <= 11 && date.getHours() >= 7) {
         this.timeOfDay = 'morning';

@@ -10,25 +10,43 @@
     top: 10%;
     margin: -75px 0 0 -90px;
 
-    .tempature-text {
-      font-size: 62px;
-      color: white;
+    .time-location {
+
+      .temperature-text {
+        font-size: 62px;
+        color: white;
+      }
+
+      .weather-details-container {
+        padding-top: 25%;
+
+        .weather-details {
+          min-width: 300px;
+          max-width: 500px;
+          margin: auto;
+          padding: 25px;
+          border: white 2px solid;
+          border-radius: 4px;
+          opacity: 0.5;
+          background: rgba(gray, 0.7);
+        }
+      }
     }
   }
 
-  .background-container{
-    right:0;
-    bottom:0;
-    width:100%;
-    height:100%;
-    z-index:0;
+  .background-container {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
   }
 
   .stars {
-    background:url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+    background: url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
   }
 
-  .moon{
+  .moon {
     position: absolute;
     margin: auto;
     top: 0;
@@ -53,16 +71,14 @@
     height: 200px;
     background-color: #FFDE00;
     border-radius: 50%;
-    box-shadow:
-      0 0 0 20px #FFDE0080,
-      0 0 0 40px #FFDE0040,
-      0 0 0 60px #FFDE0020,
-      0 0 0 80px #FFDE0010,
-      0 0 0 100px #FFDE0000,
-      0 0 40px 100px #FFDE0010;
-    animation:
-      sunrise 2s infinite linear forwards,
-      rays 2s 2s infinite linear;
+    box-shadow: 0 0 0 20px #FFDE0080,
+    0 0 0 40px #FFDE0040,
+    0 0 0 60px #FFDE0020,
+    0 0 0 80px #FFDE0010,
+    0 0 0 100px #FFDE0000,
+    0 0 40px 100px #FFDE0010;
+    animation: sunrise 2s infinite linear forwards,
+    rays 2s 2s infinite linear;
   }
 
   @keyframes sunrise {
@@ -73,22 +89,20 @@
 
   @keyframes rays {
     0% {
-      box-shadow:
-        0 0 0 0 #FFDE0080,
-        0 0 0 20px #FFDE0080,
-        0 0 0 40px #FFDE0040,
-        0 0 0 60px #FFDE0020,
-        0 0 0 80px #FFDE0010,
-        0 0 40px 100px #FFDE0010;
+      box-shadow: 0 0 0 0 #FFDE0080,
+      0 0 0 20px #FFDE0080,
+      0 0 0 40px #FFDE0040,
+      0 0 0 60px #FFDE0020,
+      0 0 0 80px #FFDE0010,
+      0 0 40px 100px #FFDE0010;
     }
     100% {
-      box-shadow:
-        0 0 0 20px #FFDE0080,
-        0 0 0 40px #FFDE0040,
-        0 0 0 60px #FFDE0020,
-        0 0 0 80px #FFDE0010,
-        0 0 0 100px #FFDE0000,
-        0 0 40px 100px #FFDE0010;
+      box-shadow: 0 0 0 20px #FFDE0080,
+      0 0 0 40px #FFDE0040,
+      0 0 0 60px #FFDE0020,
+      0 0 0 80px #FFDE0010,
+      0 0 0 100px #FFDE0000,
+      0 0 40px 100px #FFDE0010;
     }
   }
 
